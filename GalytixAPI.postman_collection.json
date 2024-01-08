@@ -1,0 +1,95 @@
+{
+	"info": {
+		"_postman_id": "717c710c-4859-4a03-83db-0376aa17a682",
+		"name": "GalytixAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23781147",
+		"_collection_link": "https://warped-firefly-448280.postman.co/workspace/dentrix_ascend~71468c4a-f9c7-42b4-ae4e-890f9714c397/collection/23781147-717c710c-4859-4a03-83db-0376aa17a682?action=share&source=collection_link&creator=23781147"
+	},
+	"item": [
+		{
+			"name": "Get Access Token",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"type": "text"
+						},
+						{
+							"key": "client_id",
+							"value": "Demo",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "Test@123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "https://localhost:9091/connect/token",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "9091",
+					"path": [
+						"connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get GWP Average",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjhGMERDOTAxOEQ0MjI2MTlBQkZEQjczNTQ2QTc0NkQ0IiwidHlwIjoiYXQrand0In0.eyJuYmYiOjE3MDQ3MTM3NjksImV4cCI6MTcwNDcxNzM2OSwiaXNzIjoiaHR0cHM6Ly9sb2NhbGhvc3Q6OTA5MSIsImNsaWVudF9pZCI6IkRlbW8iLCJqdGkiOiI5NkNDMDUxMjc4RTZEOUMyRkY2MjgyMzVGQjBEQUY5NCIsImlhdCI6MTcwNDcxMzc2OSwic2NvcGUiOlsiYXBpMSJdfQ.Fi2flJKzk2gg3EBQwvKbLYWa252k2JTQ6KlGr4rxSGNy64A4Svlz2QBEvDNuMsUikcaQaErJ6N4MJklvLcTwzj6F9URc2tR8CzncozoQOEPPXB9j7tCQg7MlFfM_46bw6Pr8BXhFWVp4sGApnqJKeCqYIdbnxDcAGXG_zs8Hqk97Qw7twFbE-tws7SA6ucsh478jG7LFYDRXckRNMmLI7VngDt-X5HyB0D_YiuWkiZr-IR4jBQJOuA8lnFr22OjtrzBhJUWVZJ_qzj7IXMQanXTiMb9I7nJD6z9EKhhAS4UqsvYLY-pgSD5QuSVCd0IbVeJh-w_s7NJOpCBj1MyWBQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"country\": \"ae\",\r\n  \"lob\": [\r\n    \"transport\"\r\n  ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://localhost:9091/server/api/gwp/avg",
+					"protocol": "https",
+					"host": [
+						"localhost"
+					],
+					"port": "9091",
+					"path": [
+						"server",
+						"api",
+						"gwp",
+						"avg"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
